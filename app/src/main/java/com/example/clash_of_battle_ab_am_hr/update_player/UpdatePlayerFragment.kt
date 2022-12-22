@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentUpdatePlayerBinding
+import com.example.clash_of_battle_ab_am_hr.models.Capability
 import com.example.clash_of_battle_ab_am_hr.models.Player
 import com.example.clash_of_battle_ab_am_hr.utils.getColor
 import com.example.clash_of_battle_ab_am_hr.utils.loadImage
@@ -48,20 +49,34 @@ class UpdatePlayerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.buttonValidate.setEnabled(false)
         viewModel.existingPlayer.observe(viewLifecycleOwner){
+            val player = it
             binding.playerNameInput.setText(it.name)
 
             binding.playerImgUrlInput.setText(it.imageUrl)
             loadImage(binding.playerImg, it.imageUrl)
 
-            binding.capabilityLabelFirst.text = it.capability1.name
-            binding.capabilityLabelFirst.setTextColor(it.capability1.getColor(binding.capabilityLabelFirst.context))
-            binding.capabilityLabelSecond.text = it.capability2.name
-            binding.capabilityLabelSecond.setTextColor(it.capability1.getColor(binding.capabilityLabelSecond.context))
-            binding.capabilityLabelThird.text = it.capability3.name
-            binding.capabilityLabelThird.setTextColor(it.capability1.getColor(binding.capabilityLabelThird.context))
-
-
+            binding.capabilityLabelFirst.text = player.capability1.name
+            binding.capabilityLabelFirst.setTextColor(player.capability1.getColor(binding.capabilityLabelFirst.context))
+            binding.capabilityLabelSecond.text = player.capability2.name
+            binding.capabilityLabelSecond.setTextColor(player.capability1.getColor(binding.capabilityLabelSecond.context))
+            binding.capabilityLabelThird.text = player.capability3.name
+            binding.capabilityLabelThird.setTextColor(player.capability1.getColor(binding.capabilityLabelThird.context))
+            binding.buttonValidate.setEnabled(true)
+            binding.buttonValidate.setOnClickListener{
+                val player = Player(
+                    player.id,
+                    binding.playerNameInput.text.toString(),
+                    binding.playerNameInput.text.toString(),
+                    binding.playerImgUrlInput.text.toString(),
+                    Capability.valueOf(binding.capabilityLabelFirst.text.toString()),
+                    Capability.valueOf(binding.capabilityLabelSecond.text.toString()),
+                    Capability.valueOf(binding.capabilityLabelThird.text.toString())
+                )
+                viewModel.updatePlayer(player)
+                findNavController().popBackStack()
+            }
         }
 
         viewModel.initWithPlayer(player_remote_id)

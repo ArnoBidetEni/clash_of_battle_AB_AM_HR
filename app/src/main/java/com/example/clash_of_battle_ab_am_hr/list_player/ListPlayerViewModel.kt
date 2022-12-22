@@ -23,14 +23,12 @@ class ListPlayerViewModel: ViewModel() {
     val player: LiveData<List<Player>> = playerDAO.watchAll()
     var currentPlayer : Player? = null
 
-    fun refreshHeroes() {
+    fun refreshPlayers() {
         viewModelScope.launch {
             try {
                 val remoteTripList: List<Player> = playerApi.players().toListOfPlayers()
-
-                currentPlayer = remoteTripList.find { player: Player -> player.name == Env.current_user }
                 playerDAO.replace(remoteTripList)
-
+                currentPlayer = remoteTripList.find { player: Player -> player.remoteId == Env.current_user }
             } catch(e: Exception) {
                 Log.e("API ERROR", "Error while getting player from API", e)
             }

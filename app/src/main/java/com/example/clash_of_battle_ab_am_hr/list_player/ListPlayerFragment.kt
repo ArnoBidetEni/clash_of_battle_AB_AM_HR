@@ -30,7 +30,7 @@ class ListPlayerFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ListPlayerViewModel::class.java)
-        viewModel.refreshHeroes()
+        viewModel.refreshPlayers()
     }
 
     override fun onCreateView(
@@ -51,12 +51,13 @@ class ListPlayerFragment : Fragment() {
         }
 
         binding.currentPlayer.setOnClickListener{
-            val arguments = bundleOf(UpdatePlayerFragment.PLAYER_REMOTE_ID to viewModel.currentPlayer?.name)
+            val currentPlayer = viewModel.currentPlayer
+            val arguments = bundleOf(UpdatePlayerFragment.PLAYER_REMOTE_ID to currentPlayer?.remoteId)
             findNavController().navigate(R.id.action_listPlayerFragment_to_updatePlayerFragment, arguments)
         }
 
         binding.refresh.setOnClickListener {
-            viewModel.refreshHeroes()
+            viewModel.refreshPlayers()
         }
     }
 

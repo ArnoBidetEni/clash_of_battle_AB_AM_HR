@@ -30,7 +30,7 @@ class UpdatePlayerViewModel: ViewModel()  {
         existingPlayer.value?.let {
             val player = newPlayer.copy(it.id)
             viewModelScope.launch {
-                playerApi.updatePlayer(existingPlayer.value!!.name,player)
+                playerApi.updatePlayer(existingPlayer.value!!.remoteId!!,player)
             }
         }
     }
