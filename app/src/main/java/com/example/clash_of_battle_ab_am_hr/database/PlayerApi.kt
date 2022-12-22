@@ -1,6 +1,7 @@
 package com.example.clash_of_battle_ab_am_hr.database
 
 import com.example.clash_of_battle_ab_am_hr.models.Player
+import com.example.clash_of_battle_ab_am_hr.utils.CapabilityMoshiConverter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -12,6 +13,7 @@ interface PlayerApi {
         private const val BASE_URL = "https://firechat-dev-da136-default-rtdb.europe-west1.firebasedatabase.app/"
         private val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
+            .add(CapabilityMoshiConverter())
             .build()
         private val retrofit = Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))

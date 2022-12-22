@@ -24,6 +24,11 @@
     <string name="capability_double_heal_name">Double soin</string>
     <string name="capability_precise_heal_name">Soin précis</string>
 
+
+    <string name="capability_first">Compétence 1</string>
+    <string name="capability_second">Compétence 2</string>
+    <string name="capability_third">Compétence 3</string>
+
     <string name="job_warrior_name">Guerrier</string>
     <string name="job_knight_name">Chevalier</string>
     <string name="job_priest_name">Prêtre</string>
