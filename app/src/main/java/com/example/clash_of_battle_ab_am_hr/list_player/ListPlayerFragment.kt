@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentListPlayerBinding
+import com.example.clash_of_battle_ab_am_hr.models.Player
+import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob
+import com.example.clash_of_battle_ab_am_hr.utils.loadImage
 
 class ListPlayerFragment : Fragment() {
 
@@ -36,10 +39,10 @@ class ListPlayerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.listPlayer.adapter = adapter
 
-        viewModel.trips.observe(viewLifecycleOwner) {
+        viewModel.player.observe(viewLifecycleOwner) {
+            setCurrentPlayer(it)
             adapter.submitList(it)
         }
 
@@ -51,6 +54,15 @@ class ListPlayerFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setCurrentPlayer(players : List<Player>){
+        val currentPlayer = players.find { player: Player -> player.name == Env.current_user }
+        currentPlayer?.let{
+            binding.currentPlayerName.text = currentPlayer.name
+            binding.currentPlayerClass.text = getPlayerJob(currentPlayer).name
+            loadImage(binding.currentPlayerImageView, currentPlayer.imageUrl)
+        }
     }
 
     /*override fun onCreate(savedInstanceState: Bundle?) {

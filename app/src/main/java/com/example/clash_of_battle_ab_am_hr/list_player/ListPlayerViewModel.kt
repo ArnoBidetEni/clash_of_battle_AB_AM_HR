@@ -20,7 +20,7 @@ class ListPlayerViewModel: ViewModel() {
     private val playerApi: PlayerApi by lazy { PlayerApi.service }
 
 
-    val trips: LiveData<List<Player>> = playerDAO.watchAll()
+    val player: LiveData<List<Player>> = playerDAO.watchAll()
 
 
     fun refreshHeroes() {
@@ -31,7 +31,7 @@ class ListPlayerViewModel: ViewModel() {
                 playerDAO.replace(remoteTripList)
 
             } catch(e: Exception) {
-                Log.e("API ERROR", "Error while getting trips from API", e)
+                Log.e("API ERROR", "Error while getting player from API", e)
             }
         }
     }

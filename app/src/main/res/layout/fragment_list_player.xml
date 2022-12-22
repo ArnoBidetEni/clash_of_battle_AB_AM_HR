@@ -6,15 +6,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".list_player.ListPlayerFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/current_player"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
 
+        <ImageView
+            android:id="@+id/current_player_imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:srcCompat="@tools:sample/avatars"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/current_player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player name"
+            app:layout_constraintStart_toEndOf="@id/current_player_imageView"
+            app:layout_constraintTop_toTopOf="@id/current_player_imageView"
+            app:layout_constraintBottom_toTopOf="@id/current_player_class"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:id="@+id/current_player_class_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_class_label"
+            app:layout_constraintStart_toStartOf="@id/current_player_name"
+            app:layout_constraintTop_toBottomOf="@id/current_player_name"
+            app:layout_constraintBottom_toBottomOf="@id/current_player_imageView"
+            />
+
+        <TextView
+            android:id="@+id/current_player_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Warrior"
+            app:layout_constraintStart_toEndOf="@id/current_player_class_label"
+            app:layout_constraintTop_toTopOf="@id/current_player_class_label"
+            app:layout_constraintBottom_toBottomOf="@id/current_player_class_label"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/red"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <Button
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
