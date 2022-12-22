@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.PlayerLineBinding
 import com.example.clash_of_battle_ab_am_hr.models.Player
+import com.example.clash_of_battle_ab_am_hr.utils.getColor
 import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob
 import com.example.clash_of_battle_ab_am_hr.utils.loadImage
 
@@ -40,6 +42,7 @@ class PlayerViewHolder private constructor(private val binding: PlayerLineBindin
         binding.playerClass.text =  getPlayerJob(item).name;
         binding.playerClass.text =  getPlayerJob(item).name;
         loadImage(binding.imageView, item.imageUrl)
+        binding.playerClass.setTextColor(getPlayerJob(item).getColor(binding.imageView.context))
     }
 }
 
