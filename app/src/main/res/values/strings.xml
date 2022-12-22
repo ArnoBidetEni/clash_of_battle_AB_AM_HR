@@ -2,6 +2,8 @@
     <string name="app_name">Clash of battle</string>
     <string name="action_settings">Settings</string>
 
+    <string name="navbar_menu_list_of_players">Liste des joueurs</string>
+
     <string name="select_capability_title">Sélectionnez une aptitude</string>
 
     <string name="capability_risky_attack_description">Multiplie par deux les dégâts d\'une attaque (1D6 * 2)</string>

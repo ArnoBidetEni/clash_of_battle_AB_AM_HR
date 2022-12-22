@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class UpdatePlayerViewModel: ViewModel()  {
 
-    private val playerDao by lazy { PlayerDatabase.INSTANCE?.playerDao() }
+    private val playerDao by lazy { PlayerDatabase.instance?.playerDao() }
     private val playerApi by lazy { PlayerApi.service }
 
     var current_id = 0L

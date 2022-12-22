@@ -10,15 +10,18 @@ import retrofit2.http.*
 
 interface PlayerApi {
     companion object {
-        private const val BASE_URL = "https://firechat-dev-da136-default-rtdb.europe-west1.firebasedatabase.app/"
+        private const val BASE_URL = "https://firechat-dev-da136-default-rtdb.europe-west1.firebasedatabase.app/";
+
         private val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .add(CapabilityMoshiConverter())
-            .build()
+            .build();
+
         private val retrofit = Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .baseUrl(BASE_URL)
-            .build()
+            .build();
+
         val service: PlayerApi by lazy { retrofit.create(PlayerApi::class.java) }
     }
 

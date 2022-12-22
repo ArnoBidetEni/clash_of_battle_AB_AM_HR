@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/listPlayerFragment"
         android:name="com.example.clash_of_battle_ab_am_hr.list_player.ListPlayerFragment"
-        android:label="fragment_list_player"
+        android:label="@string/navbar_menu_list_of_players"
         tools:layout="@layout/fragment_list_player" />
 </navigation>

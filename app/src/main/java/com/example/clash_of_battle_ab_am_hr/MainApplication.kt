@@ -6,6 +6,7 @@ import com.example.clash_of_battle_ab_am_hr.database.PlayerDatabase
 class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        PlayerDatabase.getDatabase(this)
+
+        PlayerDatabase.init(this)
     }
 }

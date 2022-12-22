@@ -1,5 +1,7 @@
 package com.example.clash_of_battle_ab_am_hr.list_player
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,29 +12,20 @@ import com.example.clash_of_battle_ab_am_hr.models.Player
 import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob
 import com.example.clash_of_battle_ab_am_hr.utils.loadImage
 
-
-class PlayerListAdapter(private val clickListener: (String) -> Unit): ListAdapter<Player, PlayerViewHolder>(PlayerDiffUtil()) {
-
-    override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
-        holder.bind(clickListener, getItem(position))
-    }
+class PlayerListAdapter : ListAdapter<Player, PlayerViewHolder>(PlayerDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
         return PlayerViewHolder.create(parent)
+    }
+
+    override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
+        holder.bind(getItem(position))
     }
 }
 
 class PlayerViewHolder private constructor(private val binding: PlayerLineBinding)
     : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(clickListener: (String) -> Unit, item: Player) {
-        binding.playerName.text = item.name
-        binding.playerClass.text =  getPlayerJob(item).name
-        loadImage(binding.imageView, item.imageUrl)
-        binding.root.setOnClickListener {
-            //clickListener(item.remoteId)
-        }
-    }
 
     companion object {
         fun create(parent: ViewGroup): PlayerViewHolder {
@@ -40,6 +33,13 @@ class PlayerViewHolder private constructor(private val binding: PlayerLineBindin
             val binding = PlayerLineBinding.inflate(layoutInflater, parent, false)
             return PlayerViewHolder(binding)
         }
+    }
+
+    fun bind(item: Player) {
+        binding.playerName.text = item.name;
+        binding.playerClass.text =  getPlayerJob(item).name;
+        binding.playerClass.text =  getPlayerJob(item).name;
+        loadImage(binding.imageView, item.imageUrl)
     }
 }
 
