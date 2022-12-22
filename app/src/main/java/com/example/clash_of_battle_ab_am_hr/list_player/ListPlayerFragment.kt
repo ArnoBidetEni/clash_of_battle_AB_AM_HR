@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentListPlayerBinding
 import com.example.clash_of_battle_ab_am_hr.models.Player
 import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob
@@ -44,6 +46,10 @@ class ListPlayerFragment : Fragment() {
         viewModel.player.observe(viewLifecycleOwner) {
             setCurrentPlayer(it)
             adapter.submitList(it)
+        }
+
+        binding.currentPlayer.setOnClickListener{
+            findNavController().navigate(R.id.action_listPlayerFragment_to_updatePlayerFragment)
         }
 
         binding.refresh.setOnClickListener {
