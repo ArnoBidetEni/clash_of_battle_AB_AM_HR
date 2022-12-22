@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentListPlayerBinding
 import com.example.clash_of_battle_ab_am_hr.models.Player
+import com.example.clash_of_battle_ab_am_hr.update_player.UpdatePlayerFragment
 import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob
 import com.example.clash_of_battle_ab_am_hr.utils.loadImage
 
@@ -49,7 +51,8 @@ class ListPlayerFragment : Fragment() {
         }
 
         binding.currentPlayer.setOnClickListener{
-            findNavController().navigate(R.id.action_listPlayerFragment_to_updatePlayerFragment)
+            val arguments = bundleOf(UpdatePlayerFragment.PLAYER_REMOTE_ID to viewModel.currentPlayer?.name)
+            findNavController().navigate(R.id.action_listPlayerFragment_to_updatePlayerFragment, arguments)
         }
 
         binding.refresh.setOnClickListener {
@@ -63,11 +66,10 @@ class ListPlayerFragment : Fragment() {
     }
 
     private fun setCurrentPlayer(players : List<Player>){
-        val currentPlayer = players.find { player: Player -> player.name == Env.current_user }
-        currentPlayer?.let{
-            binding.currentPlayerName.text = currentPlayer.name
-            binding.currentPlayerClass.text = getPlayerJob(currentPlayer).name
-            loadImage(binding.currentPlayerImageView, currentPlayer.imageUrl)
+        viewModel.currentPlayer?.let{
+            binding.currentPlayerName.text = it.name
+            binding.currentPlayerClass.text = getPlayerJob(it).name
+            loadImage(binding.currentPlayerImageView, it.imageUrl)
         }
     }
 }

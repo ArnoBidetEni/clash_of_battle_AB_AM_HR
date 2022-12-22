@@ -11,8 +11,8 @@ android:layout_height="match_parent"
     android:padding="20dp">
     <ImageView
         android:id="@+id/player_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         tools:src="@tools:sample/avatars"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,17 +20,17 @@ android:layout_height="match_parent"
         />
 
     <EditText
-        android:id="@+id/player_name"
+        android:id="@+id/player_name_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/player_img"
         android:layout_marginTop="20dp"
         android:hint="Player name"/>
     <EditText
-        android:id="@+id/player_img_url"
+        android:id="@+id/player_img_url_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/player_name"
+        app:layout_constraintTop_toBottomOf="@id/player_name_input"
         android:layout_marginTop="20dp"
         android:hint="Player image url"/>
 
@@ -39,7 +39,7 @@ android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/capability_first"
-        app:layout_constraintTop_toBottomOf="@id/player_img_url"
+        app:layout_constraintTop_toBottomOf="@id/player_img_url_input"
         android:layout_marginTop="40dp"
         />
 

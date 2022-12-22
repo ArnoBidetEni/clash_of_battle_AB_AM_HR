@@ -14,23 +14,23 @@ class UpdatePlayerViewModel: ViewModel()  {
     private val playerDao by lazy { PlayerDatabase.instance?.playerDao() }
     private val playerApi by lazy { PlayerApi.service }
 
-    var current_id = 0L
-    var current_remote_id = ""
     val existingPlayer = MutableLiveData<Player>()
 
-    fun initWithPlayer(remote_id: String, id : Long) {
+    private var remote_id = ""
+
+    fun initWithPlayer(id : String){
         viewModelScope.launch {
-            current_id = id
-            current_remote_id = remote_id
-            existingPlayer.value = playerDao?.get(id)
+            remote_id = id
+            existingPlayer.value = playerDao?.get(remote_id)
         }
+
     }
 
     fun updatePlayer(newPlayer: Player) {
         existingPlayer.value?.let {
             val player = newPlayer.copy(it.id)
             viewModelScope.launch {
-                playerApi.updatePlayer(current_remote_id,player)
+                playerApi.updatePlayer(existingPlayer.value!!.name,player)
             }
         }
     }

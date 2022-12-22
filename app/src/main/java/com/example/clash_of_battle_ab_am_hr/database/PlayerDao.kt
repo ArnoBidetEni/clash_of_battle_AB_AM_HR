@@ -9,6 +9,9 @@ interface PlayerDao {
     @Query("SELECT * FROM Player WHERE id = :id")
     suspend fun get(id : Long) : Player
 
+    @Query("SELECT * FROM Player WHERE name = :remote_id")
+    suspend fun get(remote_id : String) : Player
+
     @Query("SELECT * FROM Player ORDER BY name")
     suspend fun get() : List<Player>
 

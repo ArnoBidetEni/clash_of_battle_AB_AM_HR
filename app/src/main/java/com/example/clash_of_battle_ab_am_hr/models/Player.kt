@@ -1,10 +1,13 @@
 package com.example.clash_of_battle_ab_am_hr.models
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
 @Entity
+@Parcelize
 data class Player(
     @PrimaryKey(autoGenerate = true)
     @Json(ignore = true)
@@ -20,7 +23,7 @@ data class Player(
     val capability1: Capability,
     val capability2: Capability,
     val capability3: Capability,
-) {
+) : Parcelable {
     val capabilities : List<Capability>
         get() = listOf(
             capability1,

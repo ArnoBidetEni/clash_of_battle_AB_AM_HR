@@ -21,13 +21,14 @@ class ListPlayerViewModel: ViewModel() {
 
 
     val player: LiveData<List<Player>> = playerDAO.watchAll()
-
+    var currentPlayer : Player? = null
 
     fun refreshHeroes() {
         viewModelScope.launch {
             try {
                 val remoteTripList: List<Player> = playerApi.players().toListOfPlayers()
 
+                currentPlayer = remoteTripList.find { player: Player -> player.name == Env.current_user }
                 playerDAO.replace(remoteTripList)
 
             } catch(e: Exception) {
