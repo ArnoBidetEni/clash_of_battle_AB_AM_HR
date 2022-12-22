@@ -10,20 +10,35 @@
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="20dp"
         >
-        <TextView
-            android:id="@+id/capabilityName"
-            android:layout_width="0dp"
-            android:text="Italie"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/capabilityDescription"
-            android:layout_width="0dp"
-            android:text="Italie"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/capabilityName"
+                android:layout_width="match_parent"
+                android:text="Nom de l'attaque"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                />
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/capabilityDescription"
+                android:layout_width="match_parent"
+                android:text="Description"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                />
+        </LinearLayout>
+
 
     </androidx.cardview.widget.CardView>
 </LinearLayout>
