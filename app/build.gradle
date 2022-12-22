@@ -23,6 +23,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        current_user {
+            'ArthurLeBG'
+        }
+        api_key {
+
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentUpdatePlayerBinding
 
@@ -22,7 +23,6 @@ class UpdatePlayerFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
 
     private lateinit var viewModel: UpdatePlayerViewModel
 
@@ -44,5 +44,21 @@ class UpdatePlayerFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_update_player, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.capabilityButtonFirst.setOnClickListener{
+            findNavController().navigate(R.id.action_updatePlayerFragment_to_selectCapabilityActivity)
+        }
+
+        /*binding.capabilityButtonSecond.setOnClickListener{
+            findNavController().navigate(R.id.action_updatePlayerFragment_to_selectCapabilityActivity)
+        }
+
+        binding.capabilityButtonThird.setOnClickListener{
+            findNavController().navigate(R.id.action_updatePlayerFragment_to_selectCapabilityActivity)
+        }*/
     }
 }
