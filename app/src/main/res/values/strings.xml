@@ -1,12 +1,34 @@
 <resources>
-    <string name="app_name">clash_of_battle_AB_AM_HR</string>
+    <string name="app_name">Clash of battle</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="select_capability_title">Sélectionnez une aptitude</string>
+
+    <string name="capability_risky_attack_description">Multiplie par deux les dégâts d\'une attaque (1D6 * 2)</string>
+    <string name="capability_double_attack_description">Fait une attaque normale deux fois (1D6 + 1D6)</string>
+    <string name="capability_precise_attack_description">Fait une attaque normale + 3 dégâts (1D6 + 3)</string>
+    <string name="capability_risky_parry_description">Fait une attaque (1D6) et annule 1D6 * 2 dégâts adverse</string>
+    <string name="capability_double_parry_description">Fait une attaque (1D6) et annule 1D6 + 1D6 dégâts adverse</string>
+    <string name="capability_precise_parry_description">Fait une attaque (1D6) et annule 1D6 + 3 dégâts adverse</string>
+    <string name="capability_risky_heal_description">Soigne 1D6 * 2 PV</string>
+    <string name="capability_double_heal_description">Soigne 1D6 + 1D6 PV</string>
+    <string name="capability_precise_heal_description">Soigne 1D6 + 3 PV</string>
+
+    <string name="capability_risky_attack_name">Attaque risqué</string>
+    <string name="capability_double_attack_name">Double attaque</string>
+    <string name="capability_precise_attack_name">Attaque précise</string>
+    <string name="capability_risky_parry_name">Parade risqué</string>
+    <string name="capability_double_parry_name">Double parade</string>
+    <string name="capability_precise_parry_name">Parade précise</string>
+    <string name="capability_risky_heal_name">Soin risqué</string>
+    <string name="capability_double_heal_name">Double soin</string>
+    <string name="capability_precise_heal_name">Soin précis</string>
+
+    <string name="job_warrior_name">Guerrier</string>
+    <string name="job_knight_name">Chevalier</string>
+    <string name="job_priest_name">Prêtre</string>
+    <string name="job_bard_name">Barde</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="player_class_label"><i>Classe : </i></string>
+
 </resources>
