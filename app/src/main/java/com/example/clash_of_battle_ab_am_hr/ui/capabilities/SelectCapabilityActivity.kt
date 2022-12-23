@@ -1,4 +1,4 @@
-package com.example.clash_of_battle_ab_am_hr.capabilities
+package com.example.clash_of_battle_ab_am_hr.ui.capabilities
 
 import android.content.Context
 import android.content.Intent

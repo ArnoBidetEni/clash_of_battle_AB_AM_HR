@@ -1,4 +1,4 @@
-package com.example.clash_of_battle_ab_am_hr.list_player
+package com.example.clash_of_battle_ab_am_hr.ui.list_player
 
 import android.content.ContentValues.TAG
 import android.util.Log

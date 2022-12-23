@@ -7,16 +7,19 @@
 
     <fragment
         android:id="@+id/listPlayerFragment"
-        android:name="com.example.clash_of_battle_ab_am_hr.list_player.ListPlayerFragment"
+        android:name="com.example.clash_of_battle_ab_am_hr.ui.list_player.ListPlayerFragment"
         android:label="@string/navbar_menu_list_of_players"
         tools:layout="@layout/fragment_list_player" >
         <action
             android:id="@+id/action_listPlayerFragment_to_updatePlayerFragment"
             app:destination="@id/updatePlayerFragment" />
+        <action
+            android:id="@+id/action_listPlayerFragment_to_playerFightFragment"
+            app:destination="@id/playerFightFragment" />
     </fragment>
     <fragment
         android:id="@+id/updatePlayerFragment"
-        android:name="com.example.clash_of_battle_ab_am_hr.update_player.UpdatePlayerFragment"
+        android:name="com.example.clash_of_battle_ab_am_hr.ui.update_player.UpdatePlayerFragment"
         android:label="fragment_update_player"
         tools:layout="@layout/fragment_update_player" >
         <action
@@ -25,15 +28,20 @@
     </fragment>
     <activity
         android:id="@+id/selectCapabilityActivity"
-        android:name="com.example.clash_of_battle_ab_am_hr.capabilities.SelectCapabilityActivity"
+        android:name="com.example.clash_of_battle_ab_am_hr.ui.capabilities.SelectCapabilityActivity"
         android:label="fragment_select_capability"
         tools:layout="@layout/fragment_select_capability" />
     <fragment
         android:id="@+id/selectCapabilityFragment"
-        android:name="com.example.clash_of_battle_ab_am_hr.capabilities.SelectCapabilityFragment"
+        android:name="com.example.clash_of_battle_ab_am_hr.ui.capabilities.SelectCapabilityFragment"
         android:label="SelectCapabilityFragment" >
         <action
             android:id="@+id/action_selectCapabilityFragment_to_updatePlayerFragment"
             app:destination="@id/updatePlayerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/playerFightFragment"
+        android:name="com.example.clash_of_battle_ab_am_hr.ui.player_fight.PlayerFightFragment"
+        android:label="fragment_player_fight"
+        tools:layout="@layout/fragment_player_fight" />
 </navigation>

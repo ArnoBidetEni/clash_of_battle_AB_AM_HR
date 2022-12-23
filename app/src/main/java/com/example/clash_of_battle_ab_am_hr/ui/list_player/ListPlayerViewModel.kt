@@ -1,10 +1,10 @@
-package com.example.clash_of_battle_ab_am_hr.list_player
+package com.example.clash_of_battle_ab_am_hr.ui.list_player
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.clash_of_battle_ab_am_hr.database.PlayerApi
+import com.example.clash_of_battle_ab_am_hr.api.PlayerApi
 import com.example.clash_of_battle_ab_am_hr.database.PlayerDao
 import com.example.clash_of_battle_ab_am_hr.database.PlayerDatabase
 import com.example.clash_of_battle_ab_am_hr.models.Player

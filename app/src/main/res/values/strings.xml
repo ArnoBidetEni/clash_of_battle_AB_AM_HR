@@ -3,6 +3,9 @@
     <string name="action_settings">Settings</string>
 
     <string name="navbar_menu_list_of_players">Liste des joueurs</string>
+    <string name="navbar_menu_update_player">Modifier le joueur</string>
+    <string name="navbar_menu_select_capability">Sélection d\'une capacité</string>
+    <string name="navbar_menu_fight">Baston !</string>
 
     <string name="select_capability_title">Sélectionnez une aptitude</string>
 
@@ -35,7 +38,15 @@
     <string name="job_knight_name">Chevalier</string>
     <string name="job_priest_name">Prêtre</string>
     <string name="job_bard_name">Barde</string>
+
+    <string name="fight_simple_attack_button_name">Attaque simple</string>
+    <string name="fight_risky_parade_button_name">Parade risquée</string>
+    <string name="fight_double_parade_button_name">Double parade</string>
+    <string name="fight_precise_parade_button_name">Parade précise</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="player_class_label"><i>Classe : </i></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

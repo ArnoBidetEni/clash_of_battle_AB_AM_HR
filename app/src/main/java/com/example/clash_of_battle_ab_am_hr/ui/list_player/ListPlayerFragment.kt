@@ -1,4 +1,4 @@
-package com.example.clash_of_battle_ab_am_hr.list_player
+package com.example.clash_of_battle_ab_am_hr.ui.list_player
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentListPlayerBinding
 import com.example.clash_of_battle_ab_am_hr.models.Player
-import com.example.clash_of_battle_ab_am_hr.update_player.UpdatePlayerFragment
+import com.example.clash_of_battle_ab_am_hr.ui.update_player.UpdatePlayerFragment
 import com.example.clash_of_battle_ab_am_hr.utils.getColor
 import com.example.clash_of_battle_ab_am_hr.utils.getNameId
 import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob

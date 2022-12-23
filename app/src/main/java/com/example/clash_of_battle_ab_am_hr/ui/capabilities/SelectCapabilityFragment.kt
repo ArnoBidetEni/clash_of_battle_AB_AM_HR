@@ -1,4 +1,4 @@
-package com.example.clash_of_battle_ab_am_hr.capabilities
+package com.example.clash_of_battle_ab_am_hr.ui.capabilities
 
 import android.app.Activity
 import android.content.Intent
@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentSelectCapabilityBinding
 import com.example.clash_of_battle_ab_am_hr.models.Capability
-import com.example.clash_of_battle_ab_am_hr.update_player.UpdatePlayerFragment
+import com.example.clash_of_battle_ab_am_hr.ui.update_player.UpdatePlayerFragment
 
 class SelectCapabilityFragment : Fragment() {
 

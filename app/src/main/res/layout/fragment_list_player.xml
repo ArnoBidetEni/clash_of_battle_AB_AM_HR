@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".list_player.ListPlayerFragment">
+    tools:context=".ui.list_player.ListPlayerFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/current_player"

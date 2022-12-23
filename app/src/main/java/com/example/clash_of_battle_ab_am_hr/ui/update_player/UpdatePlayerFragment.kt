@@ -1,4 +1,4 @@
-package com.example.clash_of_battle_ab_am_hr.update_player
+package com.example.clash_of_battle_ab_am_hr.ui.update_player
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,8 +12,8 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.clash_of_battle_ab_am_hr.R
-import com.example.clash_of_battle_ab_am_hr.capabilities.SelectCapabilityActivity
-import com.example.clash_of_battle_ab_am_hr.capabilities.SelectCapabilityFragment
+import com.example.clash_of_battle_ab_am_hr.ui.capabilities.SelectCapabilityActivity
+import com.example.clash_of_battle_ab_am_hr.ui.capabilities.SelectCapabilityFragment
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentUpdatePlayerBinding
 import com.example.clash_of_battle_ab_am_hr.models.Capability
 import com.example.clash_of_battle_ab_am_hr.models.Player

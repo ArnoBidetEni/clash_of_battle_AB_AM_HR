@@ -1,4 +1,4 @@
-package com.example.clash_of_battle_ab_am_hr.database
+package com.example.clash_of_battle_ab_am_hr.api
 
 import com.example.clash_of_battle_ab_am_hr.models.Player
 import com.example.clash_of_battle_ab_am_hr.utils.CapabilityMoshiConverter

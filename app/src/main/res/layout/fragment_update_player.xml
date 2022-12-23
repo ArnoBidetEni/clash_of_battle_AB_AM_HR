@@ -7,7 +7,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-    tools:context=".update_player.UpdatePlayerFragment"
+    tools:context=".ui.update_player.UpdatePlayerFragment"
     android:padding="20dp">
     <ImageView
         android:id="@+id/player_img"
