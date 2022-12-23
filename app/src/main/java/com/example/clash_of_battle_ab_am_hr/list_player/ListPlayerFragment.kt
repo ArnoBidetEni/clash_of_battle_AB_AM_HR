@@ -13,6 +13,7 @@ import com.example.clash_of_battle_ab_am_hr.databinding.FragmentListPlayerBindin
 import com.example.clash_of_battle_ab_am_hr.models.Player
 import com.example.clash_of_battle_ab_am_hr.update_player.UpdatePlayerFragment
 import com.example.clash_of_battle_ab_am_hr.utils.getColor
+import com.example.clash_of_battle_ab_am_hr.utils.getNameId
 import com.example.clash_of_battle_ab_am_hr.utils.getPlayerJob
 import com.example.clash_of_battle_ab_am_hr.utils.loadImage
 
@@ -71,7 +72,7 @@ class ListPlayerFragment : Fragment() {
         viewModel.currentPlayer?.let{
             binding.currentPlayerName.text = it.name
             binding.currentPlayerClass.setTextColor(getPlayerJob(it).getColor(binding.currentPlayerName.context))
-            binding.currentPlayerClass.text = getPlayerJob(it).name
+            binding.currentPlayerClass.setText( getPlayerJob(it).getNameId())
             loadImage(binding.currentPlayerImageView, it.imageUrl)
         }
     }
