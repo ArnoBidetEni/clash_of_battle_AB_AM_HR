@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.clash_of_battle_ab_am_hr.database.PlayerApi
 import com.example.clash_of_battle_ab_am_hr.database.PlayerDao
 import com.example.clash_of_battle_ab_am_hr.database.PlayerDatabase
+import com.example.clash_of_battle_ab_am_hr.models.Capability
 import com.example.clash_of_battle_ab_am_hr.models.Player
 import kotlinx.coroutines.launch
 
@@ -33,5 +34,16 @@ class UpdatePlayerViewModel: ViewModel()  {
                 playerApi.updatePlayer(existingPlayer.value!!.remoteId!!,player)
             }
         }
+    }
+
+    fun updateCapability(index : Int, capability : Capability?){
+        capability?.let {
+            when(index){
+                1-> existingPlayer.value?.capability1 = capability
+                2-> existingPlayer.value?.capability2 = capability
+                else-> existingPlayer.value?.capability3 = capability
+            }
+        }
+        existingPlayer.value = existingPlayer.value
     }
 }

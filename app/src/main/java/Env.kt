@@ -1,5 +1,6 @@
 class Env {
+
     companion object {
-        val current_user = "Edouard"
+        val current_user = "Arno"
     }
 }

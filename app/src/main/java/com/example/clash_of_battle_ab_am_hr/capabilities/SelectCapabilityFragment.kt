@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import com.example.clash_of_battle_ab_am_hr.R
 import com.example.clash_of_battle_ab_am_hr.databinding.FragmentSelectCapabilityBinding
 import com.example.clash_of_battle_ab_am_hr.models.Capability
+import com.example.clash_of_battle_ab_am_hr.update_player.UpdatePlayerFragment
 
 class SelectCapabilityFragment : Fragment() {
 
@@ -20,6 +24,7 @@ class SelectCapabilityFragment : Fragment() {
     private var binding: FragmentSelectCapabilityBinding? = null
 
     private lateinit var adapter: SelectCapabilityAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

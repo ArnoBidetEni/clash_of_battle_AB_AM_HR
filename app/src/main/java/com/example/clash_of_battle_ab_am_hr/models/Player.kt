@@ -20,9 +20,9 @@ data class Player(
     @Json(name = "image_url")
     val imageUrl: String,
 
-    val capability1: Capability,
-    val capability2: Capability,
-    val capability3: Capability,
+    var capability1: Capability,
+    var capability2: Capability,
+    var capability3: Capability,
 ) : Parcelable {
     val capabilities : List<Capability>
         get() = listOf(
